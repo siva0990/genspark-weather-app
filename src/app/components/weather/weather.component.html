@@ -1,5 +1,4 @@
 <div class="weather-dashboard">
-  <!-- Header Section -->
   <header class="dashboard-header">
     <div class="header-title-wrapper">
       <div class="header-icon">
@@ -23,7 +22,6 @@
     </button>
   </header>
 
-  <!-- Total Forecast Stats Banner (Bonus 1) -->
   <section class="stats-banner" *ngIf="!loading() && !errorMessage()">
     <div class="stat-card">
       <span class="stat-label">Total Forecast Records</span>
@@ -31,7 +29,6 @@
     </div>
   </section>
 
-  <!-- Loading State -->
   <div class="loading-state" *ngIf="loading()">
     <div class="spinner-wrapper">
       <div class="spinner"></div>
@@ -39,7 +36,6 @@
     <p>Loading weather forecasts...</p>
   </div>
 
-  <!-- Error State -->
   <div class="error-state" *ngIf="errorMessage() && !loading()">
     <div class="error-card">
       <div class="error-icon-wrapper">
@@ -55,7 +51,6 @@
     </div>
   </div>
 
-  <!-- Forecast Table -->
   <main class="table-container" *ngIf="!loading() && !errorMessage()">
     <div class="table-wrapper">
       <table class="weather-table">
@@ -68,7 +63,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Highlight hot rows where tempC > 30 (Bonus 2) -->
           <tr *ngFor="let item of forecasts()" [class.hot-row]="item.temperatureC > 30">
             <td>
               <span class="mobile-label">Date</span>

@@ -14,7 +14,6 @@ export class WeatherComponent implements OnInit {
   loading = signal<boolean>(false);
   errorMessage = signal<string | null>(null);
   
-  // Computed signal that automatically updates when forecasts change (Bonus 1)
   totalCount = computed(() => this.forecasts().length);
 
   constructor(private weatherService: WeatherService) {}
