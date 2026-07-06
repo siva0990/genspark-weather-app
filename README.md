@@ -1,32 +1,32 @@
-# AeroTemp - Angular Weather Application
+# Weather Forecast Application
 
-A lightweight, premium weather dashboard built with Angular that consumes a public Weather forecast REST API and automatically deploys to GitHub Pages using GitHub Actions.
+A simple Angular application that retrieves and displays 5-day weather forecasts from a REST API, featuring a responsive UI and automated deployment to GitHub Pages via GitHub Actions.
 
 ## Project Description
 
-AeroTemp is a responsive single-page web dashboard designed to retrieve and display 5-day weather forecasts from a REST API. It is styled with a modern glassmorphic look, supporting desktop and mobile browsers.
+This project is a lightweight weather dashboard that displays forecast data (date, temperature in Celsius and Fahrenheit, and condition summaries) from a public REST API. It is designed to work across both desktop and mobile screens.
 
 ### Features
-- **API Integration**: Connects to the public weather forecast endpoint.
-- **Dynamic Statistics**: Displays total forecast count (Bonus 1).
-- **Temperature Alerts**: Highlights rows where temperature exceeds 30°C using a distinct warn background color (Bonus 2).
-- **Manual Data Refresh**: Includes a refresh action button with an active spinning loading indicator (Bonus 3).
-- **Responsive Layout**: Designed using CSS flexbox/grid and media queries to adapt to desktop and mobile screens.
-- **Automated CI/CD**: Automatic deployment to GitHub Pages via GitHub Actions upon push to the `main` branch.
+- **API Integration**: Connects to the provided Weather Forecast API endpoint using Angular's HttpClient.
+- **Record Statistics**: Displays the total count of loaded forecast records.
+- **Highlight Hot Days**: Highlights table rows in a warm color when the temperature exceeds 30°C.
+- **Refresh Data**: Includes a Refresh button to trigger new API requests on-demand.
+- **Responsive Layout**: Adapts using CSS media queries to support desktop, tablet, and mobile views.
+- **CI/CD Pipeline**: Deploys automatically to GitHub Pages using GitHub Actions on every push to the `main` branch.
 
 ---
 
 ## Technical Details
 
 - **Angular Version**: 22.0.5
-- **Node.js Compatibility**: v24.18.0+
-- **HTTP Client**: Angular `HttpClient` (Standalone Providers configuration)
+- **Node.js**: v24.18.0+
+- **HTTP Client**: Standalone `provideHttpClient` configuration
 
 ---
 
-## Deployment URL
+## Live Deployment
 
-The live application is hosted on GitHub Pages:
+The application is deployed publicly at:
 👉 **[https://siva0990.github.io/genspark-weather-app/](https://siva0990.github.io/genspark-weather-app/)**
 
 ---
@@ -36,7 +36,7 @@ The live application is hosted on GitHub Pages:
 Follow these steps to run the application locally:
 
 ### 1. Prerequisites
-Make sure you have [Node.js](https://nodejs.org/) installed (v18.x or newer recommended).
+Ensure you have [Node.js](https://nodejs.org/) installed (v18.x or newer recommended).
 
 ### 2. Clone the Repository
 ```bash
@@ -50,15 +50,15 @@ npm install
 ```
 
 ### 4. Run Locally
-Start the development server:
+Start the local development server:
 ```bash
 npm start
 ```
-Open your browser and navigate to `http://localhost:4200/`.
+Open your browser and navigate to `http://localhost:4200/` (or `http://localhost:4300/` if port 4200 is occupied).
 
 ### 5. Build for Production
-To build the application bundle manually:
+To build the static assets manually:
 ```bash
 npm run build
 ```
-The output will be stored in the `dist/weatherapp/` directory.
+The output will be compiled to the `dist/weatherapp/browser/` directory.
